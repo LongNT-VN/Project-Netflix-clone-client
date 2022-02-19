@@ -1,7 +1,7 @@
 import './ListItem.scss'
 import { Add, PlayArrow, ThumbDown, ThumbUp } from '@material-ui/icons'
 import { useEffect, useState } from 'react'
-import axios from 'axios';
+import {axiosInstance } from  '../../config.js';
 import { Link } from "react-router-dom";
 
 const ListItem = ({ item, index }) => {
@@ -10,7 +10,7 @@ const ListItem = ({ item, index }) => {
     useEffect(() => {
         const getMovie = async () => {
             try {
-                const res = await axios.get(`movie/get/${item}`);
+                const res = await axiosInstance.get(`movie/get/${item}`);
                 setMovie(res.data);
             } catch (error) {
                 console.log(error)
