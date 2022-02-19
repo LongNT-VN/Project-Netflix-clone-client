@@ -1,7 +1,7 @@
 import './Register.scss'
 import { useState, useRef, useContext } from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import {axiosInstance } from  '../../config.js';
 
 const Register = () => {
     let navigate = useNavigate();
@@ -20,7 +20,7 @@ const Register = () => {
     }
     const handleFinish = async (e) => {
         try {
-            await axios.post("/auth/register", user);
+            await axiosInstance.post("/auth/register", user);
             alert('Register success!!!');
             navigate("/login", { replace: true });
           } catch (err) {

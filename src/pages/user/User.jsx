@@ -1,5 +1,5 @@
 import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
-import axios from 'axios';
+import {axiosInstance } from  '../../config.js';
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar'
@@ -22,7 +22,7 @@ const User = () => {
 
     useEffect(() => {
         const getUserInfo = async () => {
-            const res = await axios.get('user/get/' + user._id, { headers: { token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken } });
+            const res = await axiosInstance.get('user/get/' + user._id, { headers: { token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken } });
             SetUserInfo(res.data);
         }
         getUserInfo();

@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { logoutfunc } from '../../context/authContext/apiCall';
 import { AuthContext } from '../../context/authContext/AuthContext';
-import axios from 'axios';
+import {axiosInstance} from '../../config.js';
 
 const Navbar = () => {
     let [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
     }
     useEffect(() => {
         const getUserInfo = async () => {
-            const res = await axios.get('user/get/' + user._id, { headers: { token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken } });
+            const res = await axiosInstance.get('user/get/' + user._id, { headers: { token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken } });
             SetUserInfo(res.data);
         }
         getUserInfo();

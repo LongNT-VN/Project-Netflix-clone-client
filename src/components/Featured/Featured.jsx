@@ -2,14 +2,14 @@ import './Featured.scss';
 import { Info, PlayArrow } from '@material-ui/icons'
 import { useState } from 'react'
 import { useEffect } from 'react';
-import axios from 'axios';
+import {axiosInstance } from  '../../config.js';
 
 const Featured = ({ type, setGenre, genre }) => {
     const [content, setContent] = useState({});
     useEffect(()=>{
         const getRandomContent = async () =>{
             try {
-                const res = await axios.get(`movie/getrandom?type=${type}`);
+                const res = await axiosInstance.get(`movie/getrandom?type=${type}`);
                 setContent(res.data[0]);
             } catch (error) {
                 console.log(error)
@@ -21,7 +21,7 @@ const Featured = ({ type, setGenre, genre }) => {
                 let selectGenre = document.getElementById("genre");
                 for (let i = 0; i < selectGenre.options.length; i++) {
                     let opt = selectGenre.options[i];
-                    if(opt.value==genre) {
+                    if(opt.value===genre) {
                         opt.setAttribute('selected','selected')
                     }
                 }

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import axios from 'axios';
+import {axiosInstance } from  '../../config.js';
 import './home.scss'
 import Navbar from '../../components/Navbar/Navbar'
 import Featured from '../../components/Featured/Featured'
@@ -15,10 +15,10 @@ const Home = ({ type }) => {
             try {
                 let res;
                 if (type) {
-                    res = await axios.get(`list/get${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`);
+                    res = await axiosInstance.get(`list/get${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`);
                 }
                 else {
-                    res = await axios.get(`list/get`);
+                    res = await axiosInstance.get(`list/get`);
                 }
                 setLists(res.data);
             } catch (error) {
