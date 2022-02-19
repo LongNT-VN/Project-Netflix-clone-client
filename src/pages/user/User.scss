@@ -1,0 +1,107 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userTop {
+        width: 80%;
+        margin-top: 80px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 32px;
+        -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        img {
+            height: 160px;
+            width: 160px;
+            border-radius: 10px;
+            margin: 50px;
+        }
+    }
+    .userInfo,.changePassword {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        input,.updateButton,.uploadButton {           
+            width: 40%;
+            padding: 0 10px;
+            font-size: 20px;
+            font-weight: 200;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 30px 50px;
+            color: var(--main-color);
+            &::placeholder {
+                color: gray;
+            }
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar{
+            width:60%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .avatarLabel{
+                font-size: 20px;
+                font-weight: bold;
+                margin: 0px 50px;
+                padding: 0 10px;
+            }
+            .inputAvatar{
+                border: none;
+            }
+        }
+        .button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .updateButton,.uploadButton {
+                width: 20%;
+                background-color: darkgreen;
+                border: none;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+    .changePasswordButtonDiv{
+        display: flex;
+        width: 80%;
+        align-items: center;
+        cursor: pointer;
+        .changePasswordButton{
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    .changePassword{
+        display: none;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        justify-content:space-evenly;
+        .inputPassword{
+            width:40%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0 10px;
+            margin: 30px 50px;
+            input{
+                width:100%;
+            }
+        }
+    }
+}

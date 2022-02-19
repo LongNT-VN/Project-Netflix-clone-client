@@ -1,0 +1,61 @@
+.upgrade{
+    width: 100%;
+    height: 100vh;        
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%),
+    url("https://trenddirectsr.com/wp-content/uploads/2021/05/netflix-banner.png");
+    .navbar{
+        position: static;
+    }
+    .containerItem{
+        color: white;
+        margin-top: 70px;
+        h1{
+            width: 100%;
+            font-size: 32px;
+            font-weight:bold;
+            color: white;
+            text-align: center;
+        }
+        .upgradeItems{
+            width: 60%;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            .upgradeItem{
+                border-radius: 10px;
+                width: 45%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px;
+                background-color:rgb(255, 62, 62);
+                margin:20px 0px;
+                .title{
+                    width: 60%;
+                    font-size: 32px;
+                    font-weight:bold;
+                    color: white;
+                    text-align: center;
+                }
+                .info{
+                    width: 40%;
+                    font-size: 16px;
+                    color: white;
+                    .buyNowButton{
+                        border-radius: 5px;
+                        border: none;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        font-weight:bold;
+                        color: white;
+                        background-color:darkgreen;
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+    }
+    }
+}
